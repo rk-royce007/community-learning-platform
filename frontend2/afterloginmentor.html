@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/profile.css">  
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+         -->
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            
+            
+            <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+            <link rel="stylesheet" href="fonts/icomoon/style.css">
+        
+            <link rel="stylesheet" href="css/bootstrap.min.css">
+            <link rel="stylesheet" href="css/jquery-ui.css">
+            <link rel="stylesheet" href="css/owl.carousel.min.css">
+            <link rel="stylesheet" href="css/owl.theme.default.min.css">
+            <link rel="stylesheet" href="css/owl.theme.default.min.css">
+        
+            <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+        
+            <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        
+            <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+        
+            <link rel="stylesheet" href="css/aos.css">
+        
+            <link rel="stylesheet" href="css/style.css">
+        
+        
+        
+        </head>
+
+        <body class="slide-1" data-spy="scroll" data-target=".site-navbar-target" data-offset="300"  style="background-image: url('images/hero_1.jpg')" data-stellar-background-ratio="0.5">
+        
+
+            <div class="site-wrap">
+
+                    <div class="site-mobile-menu site-navbar-target">
+                      <div class="site-mobile-menu-header">
+                        <div class="site-mobile-menu-close mt-3">
+                          <span class="icon-close2 js-menu-toggle"></span>
+                        </div>
+                      </div>
+                      <div class="site-mobile-menu-body"></div>
+                    </div>
+                   
+                    
+                    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+                      
+                      <div class="container-fluid">
+                        <div class="d-flex align-items-center">
+                          <div class="site-logo mr-auto w-25"><a href="index.html"><u>Learn Y</u></a></div>
+                
+                          <div class="mx-auto text-center">
+                            <nav class="site-navigation position-relative text-right" role="navigation">
+                              <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
+                                <li><a href="index.html" class="nav-link"><u>Home</u></a></li>
+                                <li><a href="index.html" class="nav-link"><u>Courses</u></a></li>
+                              
+                              </ul>
+                            </nav>
+                          </div>
+                
+                         
+                        </div>
+                      </div>
+                      
+                    </header>   
+                    <h1>welcome</h1>
+
+
+
+                    <div class="container emp-profile" style="background-color: white; margin-bottom:50px;margin-top: 180px">
+                            <form method=""  enctype="multipart/form-data">
+                                <div class="row" style="height:150px;">
+                                    <div class="col-md-4">
+                                        <div class="profile-img">
+                                                <img src="images/default.png" style="height: 175px;width: 200px"/>
+                                            <div class="file btn btn-lg btn-primary">
+                                                Change Photo
+                                                <input type='file' name='profileimage' />
+                                                      <img id="myImg" src="#" alt="" height=200 width=100>
+                
+                                                      <script>
+                                                      window.addEventListener('load', function() {
+                  document.querySelector('input[type="file"]').addEventListener('change', function() {
+                      if (this.files && this.files[0]) {
+                          var img = document.querySelector('img');  // $('img')[0]
+                          img.src = URL.createObjectURL(this.files[0]); // set src to file url
+                          img.onload = imageIsLoaded; // optional onload event listener
+                          axios({
+                              method:'post',
+                              url:'url:http://localhost:3000/users/imgupload',
+                              data:{
+                                  userimage:img.onload,
+                                  userId:localStorage.getItem("userId")
+                              }
+                          })
+                          .then(resp=>{
+                            console.log(resp)
+                
+                
+                          })
+                      }
+                  });
+                });
+                
+                function imageIsLoaded(e) { alert("Image Changed Successfully!"); }
+                                                      
+                        </script>
+                
+                        </div>
+                    </div>
+                    </div>
+
+
+
+                    <div class="col-md-6" style="margin-top: 1%; height:150px;">
+                        <div class="profile-head">
+                                    <h5 id="name1">
+                                        
+                                    </h5>
+                                    <h6>
+                                     Mentor for Course 1 (Laptop):
+                                    </h6>
+                                    <p class="proile-rating"> <span></span></p>
+                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+                                </li>
+                               
+                                <li class="nav-item">
+                                        <a class="nav-link" id="appointment-tab" data-toggle="tab" href="#appointment" role="tab" aria-controls="appointment" aria-selected="false">Appointments</a>
+                                    </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" id="pendind-appointment-tab" data-toggle="tab" href="#pending-appointment" role="tab" aria-controls="pending-appointment" aria-selected="false">Pending Appointments</a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                            <input type="button" class="profile-edit-btn" name="logout" value="Logout" onclick="Redirect()"/>
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        
+                    </div>
+                    <div class="col-md-8" style="margin-top:0px">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6 " style="margin-top: 0px">
+                                                <label>Full Name : </label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p id="name"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Address : </label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p id="address"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email : </label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p id="email"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone Number : </label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p id="contact"></p>
+                                            </div>
+                                        </div>
+                                        
+                            </div>
+                            
+                                                    
+
+                        <div class="tab-pane fade" id="appointment" role="tabpanel" aria-labelledby="appointment-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                            <div class="w3-container">
+                                                <div>
+                                                    <button class="add-appointment" type="button" onclick="ShowMyTimeSlots()">My Time Slots</button><br>
+                                                    
+                                                    <div id="timeSlots" style="display: none">
+                                                        <ul id="showtimeslots">
+
+                                                        </ul>
+
+
+                                                    </div>
+
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="block" onclick="prevAppontment()">Previous Appointments</button>
+                                                    <div id="appointments" style="display:none">
+                                                        <ul id="ul_appointments">
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 offset-md-1">
+                                        <button type="button" onclick="addtimeslot()">
+                                                Add Time Slot
+                                            </button>
+                                            <div id="addtime" style="display: none">
+                                                <input type="text" id="time" placeholder="yyyy-mm-dd" style="width: 100px" value="">
+                                                <button   onclick="addtime()">
+                                                    Add
+                                                </button>
+                                            </div>
+                                </div>
+                                
+                    </div>
+                </div>
+
+
+                <div class="tab-pane fade"  role="tabpanel" id="pending-appointment" aria-labelledby="pending-appointment-tab">
+                    
+                   
+        </div>
+
+
+
+                    </div>
+                </div>
+            </form>           
+        </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+       
+        <script src="./mentor.js">
+        </script>
+
+
+
+        <script>
+            function Redirect() {
+                   localStorage.clear();
+                  window.location = "./loginuser.html";
+               }
+
+
+
+
+            function prevAppontment(){
+                document.getElementById("appointments").style.display="block"
+            }
+            function addtime(){
+                console.log(document.getElementById("time").value)
+                axios({
+                    method:'put',
+                    url:'http:localhost:3000/mentors/newtimeslot',
+                    data:{
+                            mentorId:localStorage.getItem("mentorId"),
+                            timeSlot:document.getElementById("time").value
+                    }
+                })
+                .then(resp=>{
+                    console.log("f**",resp)
+                    window.location.reload();
+                })
+            }
+            function addtimeslot(){
+                document.getElementById("addtime").style.display="block"
+            }
+        function ShowMyTimeSlots() {
+            document.getElementById("timeSlots").style.display = "block";
+          }
+          
+          function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+          }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
